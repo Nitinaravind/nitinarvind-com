@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Blog — Nitin Arvind</title>
+    <meta name="description" content="Notes from Muscat on working capital, PE partnerships, and GCC market entry. For investors and SME owners.">
+    <link rel="canonical" href="https://www.nitinarvind.com/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nitin Arvind">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://www.nitinarvind.com/blog.html">
+    <meta property="og:title" content="Blog — Nitin Arvind">
+    <meta property="og:description" content="Notes from Muscat on working capital, PE partnerships, and GCC market entry.">
+    <meta property="og:image" content="https://www.nitinarvind.com/nitin-photo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog — Nitin Arvind">
+    <meta name="twitter:description" content="Notes from Muscat on working capital, PE partnerships, and GCC market entry.">
+    <meta name="twitter:image" content="https://www.nitinarvind.com/nitin-photo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg: #0b0a09;
+    --text: #f3eee6;
+    --muted: #d2c8ba;
+    --accent: #d4b07a;
+    --glass-bg: rgba(255, 255, 255, 0.16);
+    --glass-border: rgba(212, 176, 122, 0.28);
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --radius: 24px;
+    --radius-lg: 32px;
+    --gap: 1.5rem;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+#about, #expertise, #community, #contact, #blog {
+    scroll-margin-top: 5.5rem;
+}
+
+body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 1rem;
+    min-height: 100vh;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background-image:
+        radial-gradient(ellipse 95% 60% at 12% -5%, rgba(212, 176, 122, 0.48), transparent 58%),
+        radial-gradient(ellipse 75% 55% at 92% 12%, rgba(232, 196, 140, 0.32), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 40% 70%, rgba(196, 165, 116, 0.22), transparent 62%),
+        radial-gradient(circle at 70% 90%, rgba(180, 120, 70, 0.12), transparent 45%),
+        linear-gradient(165deg, #080706 0%, #15110c 35%, #1f1912 65%, #0a0908 100%);
+    background-attachment: fixed;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -1px 0 rgba(212, 176, 122, 0.12), 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
+    padding: 0.95rem 0;
+}
+.logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.25rem;
+    padding: 0.2rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.18);
+}
+.nav-links a.active {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.22);
+}
+
+.glass {
+    background: linear-gradient(155deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.07) 45%, rgba(212,176,122,0.06) 100%);
+    backdrop-filter: blur(22px) saturate(1.35);
+    -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.15), 0 10px 32px rgba(0,0,0,0.28);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.glass:hover {
+    transform: scale(1.02);
+    border-color: rgba(212, 176, 122, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 14px 44px rgba(212, 176, 122, 0.28), 0 0 0 1px rgba(212, 176, 122, 0.2);
+}
+
+.bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    padding: 2rem 0 3rem;
+    align-items: stretch;
+}
+.bento > * { min-width: 0; }
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-1 { grid-column: span 1; }
+
+.cell {
+    padding: 1.5rem 1.6rem;
+}
+.cell-lg { padding: 1.85rem 2rem; border-radius: var(--radius-lg); }
+
+.kicker {
+    color: var(--accent);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.55rem;
+}
+
+.page-hero {
+    margin-bottom: 0.25rem;
+}
+.page-hero h1 {
+    font-size: clamp(2.2rem, 4.8vw, 3.1rem);
+    margin-bottom: 0.65rem;
+}
+.page-intro {
+    color: var(--muted);
+    max-width: 38rem;
+    font-size: 1.05rem;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+.post-card-date {
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.55rem;
+}
+.post-card h2 {
+    font-size: 1.28rem;
+    margin-bottom: 0.65rem;
+}
+.post-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    flex: 1;
+}
+.post-card-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.site-footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 1.5rem 0 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    background: rgba(11, 10, 9, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.footer-links a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 900px) {
+    .bento { grid-template-columns: 1fr; }
+    .span-1, .span-2, .span-3 { grid-column: span 1; }
+    .wrap { padding: 0 1.15rem; }
+}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html" class="logo">Nitin Arvind</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#expertise">Expertise</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#community">Community</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <div class="bento">
+                <article class="glass cell cell-lg span-3 page-hero">
+                    <p class="kicker">Notes</p>
+                    <h1>Blog</h1>
+                    <p class="page-intro">Operator notes from Muscat — working capital, partnerships, and what actually stalls GCC deals. Written for investors and SME owners.</p>
+                </article>
+
+                <a class="glass cell post-card span-1" href="blog/working-capital-turnaround.html">
+                    <p class="post-card-date">September 2026</p>
+                    <h2>Working capital is where a stuck GCC SME actually bleeds</h2>
+                    <p>DSO and the shop floor move profit faster than a new strategy. How I look at cash conversion, collections, and operations from Muscat — including the kind of lift you get when DSO actually moves.</p>
+                    <span class="post-card-more">Read the note →</span>
+                </a>
+
+                <a class="glass cell post-card span-1" href="blog/private-equity-oman.html">
+                    <p class="post-card-date">September 2026</p>
+                    <h2>What PE actually looks like for an Oman operator</h2>
+                    <p>Not a US-style LBO. Family control versus capital, governance that works in Muscat, and the sentence you should be able to say before anyone drafts a term sheet.</p>
+                    <span class="post-card-more">Read the note →</span>
+                </a>
+
+                <a class="glass cell post-card span-1" href="blog/gcc-market-entry.html">
+                    <p class="post-card-date">September 2026</p>
+                    <h2>Entering Oman is not a term sheet</h2>
+                    <p>Inbound capital and operators stall on local partners, files, and the cash cycle — not on the pitch. The unglamorous sequence that actually stands a company up.</p>
+                    <span class="post-card-more">Read the note →</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <div class="footer-links">
+                <a href="mailto:nitin@amberwi.com">nitin@amberwi.com</a>
+                <a href="https://www.linkedin.com/in/nitin-arvind/" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 Nitin Arvind</p>
+        </div>
+    </footer>
+</body>
+</html>

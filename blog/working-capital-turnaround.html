@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>Working capital is where a stuck GCC SME actually bleeds — Nitin Arvind</title>
+    <meta name="description" content="How DSO and operations move profit in a stuck GCC SME. Notes from Muscat on collections, cash, and the shop floor.">
+    <link rel="canonical" href="https://www.nitinarvind.com/blog/working-capital-turnaround.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nitin Arvind">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://www.nitinarvind.com/blog/working-capital-turnaround.html">
+    <meta property="og:title" content="Working capital is where a stuck GCC SME actually bleeds">
+    <meta property="og:description" content="How DSO and operations move profit in a stuck GCC SME.">
+    <meta property="og:image" content="https://www.nitinarvind.com/nitin-photo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Working capital is where a stuck GCC SME actually bleeds">
+    <meta name="twitter:description" content="How DSO and operations move profit in a stuck GCC SME.">
+    <meta name="twitter:image" content="https://www.nitinarvind.com/nitin-photo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+
+:root {
+    --bg: #0b0a09;
+    --text: #f3eee6;
+    --muted: #d2c8ba;
+    --accent: #d4b07a;
+    --glass-bg: rgba(255, 255, 255, 0.16);
+    --glass-border: rgba(212, 176, 122, 0.28);
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --radius: 24px;
+    --radius-lg: 32px;
+    --gap: 1.5rem;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+#about, #expertise, #community, #contact, #blog {
+    scroll-margin-top: 5.5rem;
+}
+
+body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 1rem;
+    min-height: 100vh;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background-image:
+        radial-gradient(ellipse 95% 60% at 12% -5%, rgba(212, 176, 122, 0.48), transparent 58%),
+        radial-gradient(ellipse 75% 55% at 92% 12%, rgba(232, 196, 140, 0.32), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 40% 70%, rgba(196, 165, 116, 0.22), transparent 62%),
+        radial-gradient(circle at 70% 90%, rgba(180, 120, 70, 0.12), transparent 45%),
+        linear-gradient(165deg, #080706 0%, #15110c 35%, #1f1912 65%, #0a0908 100%);
+    background-attachment: fixed;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -1px 0 rgba(212, 176, 122, 0.12), 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
+    padding: 0.95rem 0;
+}
+.logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.25rem;
+    padding: 0.2rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.18);
+}
+.nav-links a.active {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.22);
+}
+
+.glass {
+    background: linear-gradient(155deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.07) 45%, rgba(212,176,122,0.06) 100%);
+    backdrop-filter: blur(22px) saturate(1.35);
+    -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.15), 0 10px 32px rgba(0,0,0,0.28);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.glass:hover {
+    transform: none;
+    border-color: rgba(212, 176, 122, 0.42);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 14px 44px rgba(212, 176, 122, 0.18), 0 0 0 1px rgba(212, 176, 122, 0.15);
+}
+
+.page-main { padding: 2rem 0 3rem; }
+.article-card {
+    padding: 1.85rem 2rem;
+    border-radius: var(--radius-lg);
+    max-width: 48rem;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.article-date {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.55rem;
+}
+.article-title {
+    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
+    max-width: 18ch;
+    margin-bottom: 0.85rem;
+}
+.article-dek {
+    font-size: 1.12rem;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    max-width: 40rem;
+    line-height: 1.55;
+}
+.post-body { max-width: 40rem; }
+.post-body p { margin-bottom: 1.2rem; color: var(--text); }
+.post-body h2 {
+    font-size: 1.35rem;
+    margin: 2.1rem 0 0.8rem;
+    scroll-margin-top: 5.5rem;
+}
+.takeaway {
+    border: 1px solid var(--glass-border);
+    border-radius: calc(var(--radius) - 6px);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.25rem 1.35rem;
+    margin: 2rem 0;
+}
+.takeaway h2 { margin-top: 0; color: var(--accent); font-size: 1.1rem; }
+.takeaway p { margin-bottom: 0; color: var(--muted); }
+
+.site-footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 1.5rem 0 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    background: rgba(11, 10, 9, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.footer-links a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 900px) {
+    .wrap { padding: 0 1.15rem; }
+    .article-card { padding: 1.4rem 1.35rem; }
+    .page-main { padding: 1.5rem 0 2.5rem; }
+}
+
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <nav class="nav" aria-label="Primary">
+                <a href="../index.html" class="logo">Nitin Arvind</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#expertise">Expertise</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#community">Community</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="page-main">
+        <div class="wrap">
+            <article class="glass article-card">
+                <a class="back-link" href="../blog.html">← All notes</a>
+                <p class="article-date">September 2026</p>
+                <h1 class="article-title">Working capital is where a stuck GCC SME actually bleeds</h1>
+                <p class="article-dek">Days sales outstanding and the shop floor move profit faster than a new strategy. Here is how I look at it from Muscat — and what the numbers look like when you actually work them.</p>
+                <div class="post-body">
+
+                <p>If a company in Oman or the wider GCC is stuck, the first place I look is not the strategy deck. I look at cash trapped in receivables, inventory that is not turning, and a plant or service line that is busy without being paid. Eighteen years of PE operations and turnaround work taught me the same lesson in logistics, manufacturing, and technology: profit is often already in the business. It is sitting in DSO, in scrap, in overtime that does not convert.</p>
+                <p>I work from Muscat. Family-owned SMEs here are not broken in the way a US distressed playbook assumes. Many are generating revenue. Owners know the customers. The issue is that cash conversion has slipped, and nobody has been given a mandate to fix the unglamorous bits. The owner is often personally bridging the gap. Staff are loyal and slightly lost. There is a report, somewhere, that was built for a bank and is not used to run the week.</p>
+
+                <h2>DSO is a process, not a finance KPI</h2>
+                <p>Days sales outstanding is treated as a reporting number. It is not. It is the length of time between doing the work and collecting for it — credit terms that were never enforced, invoices that go out late, disputes that sit with a salesperson who does not like the conversation, and a collections calendar that only exists in someone’s head.</p>
+                <p>In portfolio work I have seen DSO come down from 78 days to 45. That was not a new ERP. It was invoice discipline, named owners, a weekly cash meeting that actually happened, and stopping shipment or service when terms were breached — which in this region takes a conversation with the owner, because relationships are real. The cash that came back was more than $500K of working capital. That is not a branded case study. It is the kind of number you get when you treat collections as operations.</p>
+                <p>In GCC SMEs the customer is often another family group. You do not send a legal letter on day 46 and call it a process. You do need a process: who chases, on what day, with what script, and when the owner gets involved. If that is not written down, DSO is a wish. I am not giving legal advice on credit or enforcement. I am saying that if nobody can tell you, on a Wednesday, who is 60 days out and who is chasing them, you do not have a working-capital policy. You have a hope.</p>
+
+                <h2>The shop floor and the P&amp;L are the same problem</h2>
+                <p>Working capital and margin sit on the same line. If manufacturing is inefficient, you build inventory to hide poor flow. If you cut DSO but the plant still wastes capacity on rework and idle changeovers, you have collected cash for a business that is still leaking.</p>
+                <p>In turnaround work, profit-margin improvement on the order of ~45% did not come from a pricing miracle. It came from mix, from killing work that did not pay, from procurement that stopped being a family courtesy, and from manufacturing-efficiency gains around 25% — line balance, downtime that got measured, supervisors who were allowed to stop a bad run. Those are operator jobs. They are not a consulting slide. Those figures are from work I have already described publicly. They illustrate the kind of lift that is available when you run the week. They are not a logo on a case study.</p>
+                <p>GCC manufacturing and logistics businesses often run on owner instinct. That instinct built the company. It does not scale the cash cycle. You need a weekly rhythm: cash, production, overdue, and one decision that gets made in the room. One hour. Same pack. Collections next to dispatch.</p>
+
+                <h2>What stuck usually looks like here</h2>
+                <p>A typical stuck SME in Oman or the UAE is not insolvent. It is over-trading or under-collecting. Bank facilities are drawn. The owner is funding delays from personal liquidity. Nobody is stupid. The company grew on instinct, and instinct does not run a cash cycle at this scale.</p>
+                <p>The fix is not a new vision. It is a cash calendar the GM actually runs, credit limits that apply to cousins, inventory that is counted rather than estimated, and one person who owns DSO the way a plant manager owns OEE. Family businesses will protect relationships. That is rational. The job is to separate relationship from terms. You can be a good partner and still collect on day 45. If you cannot say no to a shipment when terms are broken, you have chosen your DSO. Be honest about it.</p>
+
+                <div class="takeaway">
+                    <h2>Takeaway</h2>
+                    <p>If your DSO has not moved in a year, you do not have a working-capital problem. You have an operating-rhythm problem. Measure DSO weekly, name an owner, and put collections next to production in the same meeting. The cash is already in the ledger. Go get it.</p>
+                </div>
+
+                <p>If you are looking at a stuck company — manufacturing, logistics, or a services business with stretched receivables — email me at <a href="mailto:nitin@amberwi.com?subject=Working%20capital%20/%20turnaround">nitin@amberwi.com</a>. I work these problems from Muscat.</p>
+
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <div class="footer-links">
+                <a href="mailto:nitin@amberwi.com">nitin@amberwi.com</a>
+                <a href="https://www.linkedin.com/in/nitin-arvind/" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 Nitin Arvind</p>
+        </div>
+    </footer>
+</body>
+</html>
