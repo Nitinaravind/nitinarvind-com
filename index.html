@@ -40,7 +40,8 @@
 html { scroll-behavior: smooth; }
 
 /* Sticky nav offset for in-page anchors */
-#about, #expertise, #community, #contact, #blog {
+#about, #expertise, #community, #contact, #blog,
+.section-label {
     scroll-margin-top: 5.5rem;
 }
 
@@ -359,7 +360,32 @@ h1, h2, h3 {
     .photo-cell img { max-height: 360px; min-height: 220px; }
     .wrap { padding: 0 1.15rem; }
 }
-    </style>
+    
+/* Section labels outside glass cards */
+.section-label {
+    grid-column: 1 / -1;
+    margin: 0.45rem 0 0.1rem;
+    padding: 0.1rem 0.15rem 0;
+    color: var(--accent);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.35);
+}
+.section-label::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    margin-top: 0.55rem;
+    background: rgba(212, 176, 122, 0.55);
+}
+/* Kickers live in section labels now */
+.cell .kicker { display: none; }
+
+</style>
 </head>
 <body>
     <header class="site-header">
@@ -394,6 +420,7 @@ h1, h2, h3 {
                 </figure>
 
                 <!-- About -->
+                <p class="section-label">About</p>
                 <article class="glass cell span-3" id="about">
                     <p class="kicker">About</p>
                     <h2>Partner, Amber Wealth International</h2>
@@ -424,7 +451,8 @@ h1, h2, h3 {
                 </div>
 
                 <!-- Expertise -->
-                <article class="glass cell span-1" id="expertise">
+                <p class="section-label" id="expertise">Expertise</p>
+                <article class="glass cell span-1">
                     <p class="expertise-code">PE</p>
                     <h3>Private Equity</h3>
                     <p>Operate and improve portfolio companies in logistics, manufacturing, and technology. Worked with $1B+ in investment capital.</p>
@@ -456,6 +484,7 @@ h1, h2, h3 {
                 </article>
 
                 <!-- Community + Blog -->
+                <p class="section-label">Community &amp; notes</p>
                 <article class="glass cell span-3" id="community">
                     <p class="kicker">Community</p>
                     <p class="community-role">President, ISWK Alumni Community</p>
@@ -475,6 +504,7 @@ h1, h2, h3 {
                 </article>
 
                 <!-- Contact CTA -->
+                <p class="section-label">Contact</p>
                 <article class="glass cell cell-lg span-3" id="contact">
                     <p class="kicker">Contact</p>
                     <h2>If you are looking at a deal, a stuck company, or a GCC market entry, email me.</h2>
