@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <title>Freight, inventory, and delayed receivables when corridors snarl — Nitin Arvind, Muscat, Oman</title>
+    <meta name="description" content="When regional corridors snarl, trader-manufacturers feel freight variance, safety stock, and stretched receivables in the same cash week.">
+    <link rel="canonical" href="https://www.nitinarvind.com/blog/freight-inventory-receivables-corridors.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nitin Arvind">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://www.nitinarvind.com/blog/freight-inventory-receivables-corridors.html">
+    <meta property="og:title" content="Freight, inventory, and delayed receivables when corridors snarl | Muscat, Oman">
+    <meta property="og:description" content="When regional corridors snarl, trader-manufacturers feel freight variance, safety stock, and stretched receivables in the same cash week.">
+    <meta property="og:image" content="https://www.nitinarvind.com/og-blog.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Freight, inventory, and delayed receivables when corridors snarl | Muscat, Oman">
+    <meta name="twitter:description" content="When regional corridors snarl, trader-manufacturers feel freight variance, safety stock, and stretched receivables in the same cash week.">
+    <meta name="twitter:image" content="https://www.nitinarvind.com/og-blog.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+
+
+:root {
+    --bg: #0b0a09;
+    --text: #f3eee6;
+    --muted: #d2c8ba;
+    --accent: #d4b07a;
+    --glass-bg: rgba(255, 255, 255, 0.16);
+    --glass-border: rgba(212, 176, 122, 0.28);
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --radius: 24px;
+    --radius-lg: 32px;
+    --gap: 1.5rem;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+#about, #expertise, #community, #contact, #blog {
+    scroll-margin-top: 5.5rem;
+}
+
+body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 1rem;
+    min-height: 100vh;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background-image:
+        radial-gradient(ellipse 95% 60% at 12% -5%, rgba(212, 176, 122, 0.48), transparent 58%),
+        radial-gradient(ellipse 75% 55% at 92% 12%, rgba(232, 196, 140, 0.32), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 40% 70%, rgba(196, 165, 116, 0.22), transparent 62%),
+        radial-gradient(circle at 70% 90%, rgba(180, 120, 70, 0.12), transparent 45%),
+        linear-gradient(165deg, #080706 0%, #15110c 35%, #1f1912 65%, #0a0908 100%);
+    background-attachment: fixed;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -1px 0 rgba(212, 176, 122, 0.12), 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
+    padding: 0.95rem 0;
+}
+.logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.25rem;
+    padding: 0.2rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.18);
+}
+.nav-links a.active {
+    color: var(--text);
+    background: rgba(212, 176, 122, 0.22);
+}
+
+.glass {
+    background: linear-gradient(155deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.07) 45%, rgba(212,176,122,0.06) 100%);
+    backdrop-filter: blur(22px) saturate(1.35);
+    -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.15), 0 10px 32px rgba(0,0,0,0.28);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.glass:hover {
+    transform: none;
+    border-color: rgba(212, 176, 122, 0.42);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 14px 44px rgba(212, 176, 122, 0.18), 0 0 0 1px rgba(212, 176, 122, 0.15);
+}
+
+.page-main { padding: 2rem 0 3rem; }
+.article-card {
+    padding: 1.85rem 2rem;
+    border-radius: var(--radius-lg);
+    max-width: 48rem;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.article-date {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.55rem;
+}
+.article-title {
+    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
+    max-width: 18ch;
+    margin-bottom: 1.5rem;
+}
+.post-body { max-width: 40rem; }
+.post-body p { margin-bottom: 1.2rem; color: var(--text); }
+.post-body h2 {
+    font-size: 1.35rem;
+    margin: 2.1rem 0 0.8rem;
+    scroll-margin-top: 5.5rem;
+}
+.post-body ol, .post-body ul {
+    margin: 0 0 1.2rem 1.35rem;
+    color: var(--text);
+}
+.post-body li {
+    margin-bottom: 0.55rem;
+}
+.takeaway {
+    border: 1px solid var(--glass-border);
+    border-radius: calc(var(--radius) - 6px);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.25rem 1.35rem;
+    margin: 2rem 0;
+}
+.takeaway h2 { margin-top: 0; color: var(--accent); font-size: 1.1rem; }
+.takeaway p { margin-bottom: 0; color: var(--muted); }
+
+.site-footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 1.5rem 0 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    background: rgba(11, 10, 9, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.footer-links a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 900px) {
+    .wrap { padding: 0 1.15rem; }
+    .article-card { padding: 1.4rem 1.35rem; }
+    .page-main { padding: 1.5rem 0 2.5rem; }
+}
+
+
+    </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Freight, inventory, and delayed receivables when corridors snarl", "description": "When regional corridors snarl, trader-manufacturers feel freight variance, safety stock, and stretched receivables in the same cash week.", "url": "https://www.nitinarvind.com/blog/freight-inventory-receivables-corridors.html", "datePublished": "2025-12-28", "dateModified": "2025-12-28", "image": "https://www.nitinarvind.com/og-blog.jpg", "author": {"@type": "Person", "name": "Nitin Arvind", "url": "https://www.nitinarvind.com/", "jobTitle": "Partner — M&A and Strategic Advisory", "worksFor": {"@type": "Organization", "name": "Amber Wealth International", "url": "https://amberwi.com"}, "address": {"@type": "PostalAddress", "addressLocality": "Muscat", "addressCountry": "OM"}}, "publisher": {"@type": "Person", "name": "Nitin Arvind", "url": "https://www.nitinarvind.com/"}, "mainEntityOfPage": "https://www.nitinarvind.com/blog/freight-inventory-receivables-corridors.html", "inLanguage": "en-GB", "keywords": "Nitin Arvind, Muscat, Oman, GCC, freight, inventory, receivables, working capital, corridors"}</script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <nav class="nav" aria-label="Primary">
+                <a href="../index.html" class="logo">Nitin Arvind</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#expertise">Expertise</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#community">Community</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="page-main">
+        <div class="wrap">
+            <article class="glass article-card">
+                <a class="back-link" href="../blog.html">← All notes</a>
+                <p class="article-date">December 2025</p>
+                <h1 class="article-title">Freight, inventory, and delayed receivables when corridors snarl</h1>
+<div class="post-body">
+                <p>When regional corridors snarl, trader-manufacturers feel freight variance, safety stock, and stretched receivables in the same cash week.</p>
+                <p>I write this from Muscat, Oman, for GCC operators who already know their lanes and still get surprised when three working-capital lines move together. Corridor disruption is not abstract. It shows up as a higher freight invoice, a warehouse that fills “just in case,” and customers who delay payment while they wait on their own inbound goods.</p>
+                <p>This is the second time in this series I am treating regional conflict as an operator problem. The first post covered the cash-cycle sequence. Here the focus is narrower: freight variance, inventory discipline, and delayed receivables when routes get unreliable.</p>
+                <h2>Freight variance is a cash line, not a logistics footnote</h2>
+                <p>When corridors snarl, freight quotes stop being a line item you average over the year. Spot rates jump. Surcharges appear. Transit windows slip, so demurrage and storage fees show up for people who never budgeted them.</p>
+                <p>For a Muscat- or UAE-based trader, that means purchase cost of goods rises before you can pass anything to the customer. For a manufacturer, inbound materials arrive late and more expensive, which compresses the production plan and stretches finished-goods timing.</p>
+                <p>Treat freight variance as a weekly cash item. Track quote versus booked, surcharge stack, and expected arrival versus actual. If finance only sees freight at month-end, you will discover the bleed after the bank line has already absorbed it.</p>
+                <p>Operators who leave freight “with logistics” without a cash owner usually find out too late that three expensive shipments ate the room they needed for payroll or a supplier deposit.</p>
+                <h2>Safety stock becomes a silent working-capital tax</h2>
+                <p>The instinct under corridor stress is to over-order. Buy earlier. Buy more. Protect the sales team from a stockout story.</p>
+                <p>Some of that is rational for critical SKUs with real scarcity. Most of it is fear. Safety stock without a named sell-through date is cash parked in the warehouse. Goods in transit already trap cash; adding a second layer of “buffer” stock traps more.</p>
+                <p>Write rules before the next snarl:</p>
+                <ul>
+<li>Critical SKUs: define minimum cover in days and a maximum. Above the max needs owner sign-off.</li>
+<li>Non-critical SKUs: no forward build driven by corridor headlines alone.</li>
+<li>Open POs: review weekly for arrivals that no longer match demand.</li>
+<li>Slow movers already in the shed: freeze reorders even if freight looks “cheap this week.”</li>
+</ul>
+                <p>I have seen teams celebrate securing a container while the aging report showed the real problem was already sitting on the rack. Freight scarcity does not excuse inventory museums.</p>
+                <h2>Delayed receivables arrive on the same calendar</h2>
+                <p>Corridor disruption hits your customers too. Their inbound delays become excuses on your invoices. Payment committees stretch. Disputes multiply around delivery dates, partial shipments, and quality claims that appear only when cash is tight.</p>
+                <p>You can be collecting slower while paying freight and suppliers faster. That double squeeze is the working-capital event. Rank customers by how they pay under stress, not only by revenue. Escalate early on the accounts that always stretch when lanes get messy. Put dispute deadlines in writing so “we are waiting on our shipment” does not become an open-ended deferral.</p>
+                <p>Owner-to-owner calls still matter in the GCC. So does a credit policy that does not dissolve the week freight slips. If every soft story reaches the founder without a collections calendar, DSO will drift while everyone claims they are “managing relationships.”</p>
+                <h2>One operating pack when corridors snarl</h2>
+                <p>Keep the response operational. Build a short pack and update it weekly until the route normalises:</p>
+                <ol>
+<li>Freight variance versus plan, with surcharges named.</li>
+<li>Goods in transit and expected arrivals.</li>
+<li>Safety-stock levels versus the written max for critical SKUs.</li>
+<li>Top receivables by days and dispute reason.</li>
+<li>Supplier terms that shortened (prepay, CAD, cut limits).</li>
+<li>Cash runway for the next sixty to ninety days.</li>
+</ol>
+                <p>Share that pack with the bank before the facility is maxed. A factual bridge beats a late request built on corridor narrative. For any live deal or portfolio review, re-underwrite working-capital assumptions. Last year’s DSO and stock days are stale when routes are unreliable.</p>
+                <h2>What to freeze, what to fund</h2>
+                <p>Freeze non-critical stock builds and discretionary opex that can wait thirty days. Fund critical inbound that keeps contracted sales alive, and fund the collections effort that brings cash back — people time, clear dispute owners, and escalation dates.</p>
+                <p>Do not fund panic forward buys that lack a sales owner and a kill date. Do not fund soft credit for customers who already stretched last time corridors snarled.</p>
+                <p>Regional conflict, for a trader-manufacturer in this region, is delayed containers, nervous credit managers, and a founder staring at a full warehouse and a thin bank balance. The fix is not a geopolitics briefing. It is freight visibility, inventory caps, and a receivables chase that does not wait for the route to calm down.</p>
+                <p>I work these cash maps from Muscat, Oman. When corridors snarl, start with freight, stock, and aging in the same meeting. Liquidity usually moves before the strategy deck does.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <div class="footer-links">
+                <a href="mailto:nitin@amberwi.com">nitin@amberwi.com</a>
+                <a href="https://www.linkedin.com/in/nitin-arvind/" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 Nitin Arvind</p>
+        </div>
+    </footer>
+</body>
+</html>
