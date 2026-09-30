@@ -156,7 +156,7 @@ h1, h2, h3 {
 .article-card {
     padding: 1.85rem 2rem;
     border-radius: var(--radius-lg);
-    max-width: 48rem;
+    max-width: 64rem;
 }
 .back-link {
     display: inline-block;
@@ -178,7 +178,10 @@ h1, h2, h3 {
     max-width: 18ch;
     margin-bottom: 1.5rem;
 }
-.post-body { max-width: 40rem; }
+.post-body > p,
+.post-body > h2,
+.post-body > ul,
+.post-body > ol { max-width: 40rem; }
 .post-body p { margin-bottom: 1.2rem; color: var(--text); }
 .post-body h2 {
     font-size: 1.35rem;
@@ -197,13 +200,116 @@ h1, h2, h3 {
 .post-body li {
     margin-bottom: 0.55rem;
 }
-.post-body figure {
-    margin: 0.15rem 0 1.35rem;
+.with-diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12.5rem, 17.5rem);
+    column-gap: 1.4rem;
+    align-items: start;
+    margin: 2.1rem 0 0.35rem;
 }
-.post-body figure img {
+.with-diagram > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 0 0.8rem;
+}
+.diagram-copy {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    max-width: 40rem;
+}
+.diagram-copy > :first-child { margin-top: 0; }
+.with-diagram > figure {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin: 0;
+    position: sticky;
+    top: 5.75rem;
+    align-self: start;
+}
+.diagram-zoom {
+    display: block;
     width: 100%;
-    border-radius: calc(var(--radius) - 8px);
+    margin: 0;
+    padding: 0;
     border: 1px solid var(--glass-border);
+    border-radius: calc(var(--radius) - 8px);
+    background: linear-gradient(155deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.06) 48%, rgba(212,176,122,0.08) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 10px 28px rgba(0,0,0,0.28);
+    cursor: zoom-in;
+    overflow: hidden;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+}
+.diagram-zoom img {
+    width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+}
+.zoom-hint {
+    display: block;
+    padding: 0.45rem 0.7rem 0.55rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(11, 10, 9, 0.35);
+    border-top: 1px solid rgba(212, 176, 122, 0.22);
+}
+.diagram-zoom:hover,
+.diagram-zoom:focus-visible {
+    border-color: rgba(212, 176, 122, 0.62);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 14px 36px rgba(212, 176, 122, 0.2);
+}
+.diagram-zoom:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.75rem 1.25rem 1.5rem;
+    background: rgba(8, 7, 6, 0.82);
+    backdrop-filter: blur(18px) saturate(1.25);
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+}
+.lightbox[hidden] { display: none; }
+.lightbox img {
+    max-width: min(92vw, 1122px);
+    max-height: min(86vh, 1402px);
+    width: auto;
+    height: auto;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid rgba(212, 176, 122, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 24px 70px rgba(0,0,0,0.55);
+    background: #0b0a09;
+}
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 176, 122, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font: 500 1.45rem/1 var(--sans);
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+    border-color: rgba(212, 176, 122, 0.85);
+    background: rgba(212, 176, 122, 0.18);
+    outline: none;
 }
 .takeaway {
     border: 1px solid var(--glass-border);
@@ -238,6 +344,16 @@ h1, h2, h3 {
     .wrap { padding: 0 1.15rem; }
     .article-card { padding: 1.4rem 1.35rem; }
     .page-main { padding: 1.5rem 0 2.5rem; }
+    .with-diagram {
+        display: block;
+        margin-top: 2.1rem;
+    }
+    .with-diagram > h2 { margin-bottom: 0.8rem; }
+    .with-diagram > figure {
+        position: static;
+        max-width: 22rem;
+        margin: 0.35rem 0 1.35rem;
+    }
 }
 
     </style>
@@ -271,14 +387,21 @@ h1, h2, h3 {
 <p>Should I run agents for anything real, or is this just better grammar on automatic emails?</p>
 <p>I write this from Muscat for owners, CEOs, and CFOs stuck in that question. I am not an AI influencer. I am not selling a platform. I want you to leave knowing where your kind of business sits on the need curve, and whether it is worth a plain conversation about your numbers.</p>
 <p>Oman needs AI. Not every firm needs the same dose, and not for the same jobs.</p>
-<h2>Two budgets that keep getting mixed up</h2>
-<figure>
-<img src="images/how-much-ai/04-two-budgets.png" alt="Two budgets that stay separate: a CV budget for personal AI literacy and career tools, and a P&amp;L budget for the company workstreams that pay for AI this year.">
-</figure>
+<section class="with-diagram" aria-labelledby="two-budgets">
+<h2 id="two-budgets">Two budgets that keep getting mixed up</h2>
+<div class="diagram-copy">
 <p>Personal growth and the company P&amp;L still split.</p>
 <p>Learning tools on your own phone can matter a lot for your career. That is real. The company decision is different: which workstreams pay for AI this year, and which ones wait until the books and processes can feed a tool properly.</p>
 <p>One is your CV. One is the P&amp;L.</p>
 <p>Budget them separately. A sharp analyst with ChatGPT open is not a finished AI programme. A firm that buys agents with dirty Excels is not ahead. It is noisy.</p>
+</div>
+<figure>
+<button type="button" class="diagram-zoom">
+<img src="images/how-much-ai/04-two-budgets.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Two budgets that stay separate: a CV budget for personal AI literacy and career tools, and a P&amp;L budget for the company workstreams that pay for AI this year.">
+<span class="zoom-hint">Enlarge</span>
+</button>
+</figure>
+</section>
 <h2>How to read the map</h2>
 <p>High need means AI, or narrow machine assistance, should already sit on the leadership agenda.</p>
 <p>Medium need means useful in specific pockets once data is clean enough.</p>
@@ -292,10 +415,9 @@ h1, h2, h3 {
 <p>High volume, clean data, named owner: high need. Act.</p>
 <p>High volume, dirty data: medium need with a prerequisite. Clean first, then buy.</p>
 <p>Low volume, founder memory as the system: lower need for firm-wide AI. Higher need for operating discipline, and for personal skill-building if that is the goal.</p>
-<h2>High need</h2>
-<figure>
-<img src="images/how-much-ai/01-high-need.png" alt="High-need sectors in Oman where AI already belongs on the leadership agenda: banks and insurance, professional services, large retail and hospitality, and logistics with a real system.">
-</figure>
+<section class="with-diagram" aria-labelledby="high-need">
+<h2 id="high-need">High need</h2>
+<div class="diagram-copy">
 <h3>Banks, insurance, and regulated finance</h3>
 <p>You already run on data, models, and audit trails. Volume is high. Mistakes are expensive. AI belongs inside existing risk and compliance frameworks: document review, fraud and anomaly support, customer operations, coding help for technology teams, controlled copilots for analysts.</p>
 <p>The question is not whether you need it. It is which use cases are approved, logged, and owned. Procurement and model governance matter more than the dinner-table demo.</p>
@@ -308,10 +430,17 @@ h1, h2, h3 {
 <h3>Logistics, freight, and high-volume distribution with a real system</h3>
 <p>Routing exceptions, document packs, customs and shipment paperwork, demand signals when ERP and WMS actually talk. Firms with clean transactional data get more from forecasting and exception tools than firms still reconciling in WhatsApp.</p>
 <p>If your stack is mature, treat AI as extra reach on operations. If it is not, you still need the stack. You just know where you are headed.</p>
-<h2>Medium need</h2>
+</div>
 <figure>
-<img src="images/how-much-ai/02-medium-need.png" alt="Medium-need sectors: construction and contracting, manufacturing with measurable production, and mid-size trading houses that already run on ERP discipline.">
+<button type="button" class="diagram-zoom">
+<img src="images/how-much-ai/01-high-need.png" width="1122" height="1402" loading="lazy" decoding="async" alt="High-need sectors in Oman where AI already belongs on the leadership agenda: banks and insurance, professional services, large retail and hospitality, and logistics with a real system.">
+<span class="zoom-hint">Enlarge</span>
+</button>
 </figure>
+</section>
+<section class="with-diagram" aria-labelledby="medium-need">
+<h2 id="medium-need">Medium need</h2>
+<div class="diagram-copy">
 <h3>Construction and contracting</h3>
 <p>Claims, variations, retentions, site packs. Search and draft support on large document sets help commercial teams who already know the job. Scheduling and cost-control tools help when site data is captured daily, not monthly.</p>
 <p>You need AI less than a bank and more than a tiny trader. Priority: digitise the claim and variation trail, then add assistance on top.</p>
@@ -321,10 +450,17 @@ h1, h2, h3 {
 <h3>Mid-size trading houses with ERP discipline</h3>
 <p>Inventory optimisation, demand sensing, collections prioritisation, price and margin exception alerts. The need rises with SKU count and customer count. The need falls if sales, stock, and cash still live in separate Excels.</p>
 <p>AI here is medium because the payoff is real only after one system of record. Many Muscat traders are mid-journey. Plan the system and the tools together. Agents that write polite emails do not fix a stock list nobody trusts.</p>
-<h2>Lower need (for now)</h2>
+</div>
 <figure>
-<img src="images/how-much-ai/03-lower-need.png" alt="Lower need for now: small family trading, very small workshops, and holding companies that only consolidate. Fix cash, stock, and process ownership before buying AI.">
+<button type="button" class="diagram-zoom">
+<img src="images/how-much-ai/02-medium-need.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Medium-need sectors: construction and contracting, manufacturing with measurable production, and mid-size trading houses that already run on ERP discipline.">
+<span class="zoom-hint">Enlarge</span>
+</button>
 </figure>
+</section>
+<section class="with-diagram" aria-labelledby="lower-need">
+<h2 id="lower-need">Lower need (for now)</h2>
+<div class="diagram-copy">
 <h3>Small family trading and micro distributors</h3>
 <p>Thin teams, founder-led collections, stock in the owner's head. The first return is weekly cash, ageing receivables, and a single stock list someone trusts. Chatbots and AI strategy decks are the wrong spend while that is unfinished.</p>
 <p>You may still want personal AI literacy for the next generation in the business. That is the CV budget. It is not a corporate AI programme.</p>
@@ -332,6 +468,14 @@ h1, h2, h3 {
 <p>Job cards, quotes, and WhatsApp are the system. Digitise quotes and job status before you buy analytics. Narrow tools can come later for invoicing drafts or parts lookup once the basics live in one place.</p>
 <h3>Holding companies that only consolidate</h3>
 <p>If the centre does not run operations, you need AI less in the holding company and more in the operating companies that match the high or medium bands above. The board forces clean cash reporting and funds tools where the volume justifies it.</p>
+</div>
+<figure>
+<button type="button" class="diagram-zoom">
+<img src="images/how-much-ai/03-lower-need.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Lower need for now: small family trading, very small workshops, and holding companies that only consolidate. Fix cash, stock, and process ownership before buying AI.">
+<span class="zoom-hint">Enlarge</span>
+</button>
+</figure>
+</section>
 <h2>Agents, email grammar, and the waterfall</h2>
 <p>Most of the FOMO is product noise. Vendors sell different tools for different jobs. The trader and the CFO are not failing because they skipped one demo. They are stuck because the market talks as if every firm needs the same stack.</p>
 <p>Use this filter before you buy anything with &ldquo;agent&rdquo; in the name:</p>
@@ -359,5 +503,51 @@ h1, h2, h3 {
             <p>&copy; 2026 Nitin Arvind</p>
         </div>
     </footer>
+    <div class="lightbox" id="diagram-lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged diagram">
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <img alt="">
+    </div>
+    <script>
+    (function () {
+        var overlay = document.getElementById('diagram-lightbox');
+        if (!overlay) return;
+        var enlarged = overlay.querySelector('img');
+        var closeBtn = overlay.querySelector('.lightbox-close');
+        var lastFocus = null;
+
+        function openLightbox(source) {
+            enlarged.src = source.currentSrc || source.src;
+            enlarged.alt = source.alt || '';
+            lastFocus = document.activeElement;
+            overlay.hidden = false;
+            document.documentElement.style.overflow = 'hidden';
+            closeBtn.focus();
+        }
+
+        function closeLightbox() {
+            if (overlay.hidden) return;
+            overlay.hidden = true;
+            enlarged.removeAttribute('src');
+            enlarged.alt = '';
+            document.documentElement.style.overflow = '';
+            if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        }
+
+        document.querySelectorAll('.diagram-zoom').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var source = button.querySelector('img');
+                if (source) openLightbox(source);
+            });
+        });
+
+        overlay.addEventListener('click', function (event) {
+            if (event.target === overlay) closeLightbox();
+        });
+        closeBtn.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeLightbox();
+        });
+    })();
+    </script>
 </body>
 </html>
