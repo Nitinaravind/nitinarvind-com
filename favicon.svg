@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-<rect width="32" height="32" rx="7" fill="#141210"/>
-<text x="16" y="21.5" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="600" fill="#c4a574">NA</text>
+  <path d="M6.4 27.52L16 4.48L25.6 27.52" fill="none" stroke="#c4783a" stroke-width="3.84" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
