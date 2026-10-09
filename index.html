@@ -223,5 +223,50 @@
         frame();
     })();
     </script>
+    <script>
+    (function () {
+        var links = Array.prototype.filter.call(
+            document.querySelectorAll(".nav-links a"),
+            function (a) { return a.getAttribute("href").charAt(0) === "#"; }
+        );
+        if (!links.length) return;
+        var sections = [];
+        links.forEach(function (a) {
+            var section = document.getElementById(a.getAttribute("href").slice(1));
+            if (section) sections.push({ link: a, section: section });
+        });
+        if (!sections.length) return;
+        var probe = 140;
+        function paint() {
+            var scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+            var y = scrollY + probe;
+            var best = null;
+            var nearEnd = scrollY + window.innerHeight >= document.documentElement.scrollHeight - 48;
+            if (scrollY > 80) {
+                sections.forEach(function (item) {
+                    var top = item.section.getBoundingClientRect().top + scrollY;
+                    if (top <= y) best = item;
+                });
+                if (nearEnd) best = sections[sections.length - 1];
+            }
+            sections.forEach(function (item) {
+                var on = item === best;
+                item.link.classList.toggle("active", on);
+                if (on) item.link.setAttribute("aria-current", "location");
+                else item.link.removeAttribute("aria-current");
+            });
+        }
+        var ticking = false;
+        window.addEventListener("scroll", function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                paint();
+                ticking = false;
+            });
+        }, { passive: true });
+        paint();
+    })();
+    </script>
 </body>
 </html>
