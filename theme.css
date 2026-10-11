@@ -839,8 +839,13 @@ h1, h2, h3, h4 {
 
 .post-body > p,
 .post-body > h2,
+.post-body > h3,
 .post-body > ul,
 .post-body > ol { max-width: 40rem; }
+
+.post-body > figure {
+    margin: 0.2rem 0 1.45rem;
+}
 
 .post-body p { margin-bottom: 1.15rem; color: var(--text); }
 
